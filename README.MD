@@ -1,14 +1,14 @@
-#SimStorage
+# SimStorage
 
  - Introduce
  - Features
  - Usage
  - API Guide
  
-##Introduce
+## Introduce
 SimStorage is a pure javascript LocalStorage Operating library.
 
-##Features
+## Features
  - put
  - get
  - update
@@ -22,9 +22,9 @@ In SimStorage you can save your object or array data directly to LocalStorage by
 SimStorage support following types: `string, object, array, boolean, number`
 
 
-##Usage
+## Usage
 
-###save data no rewriting
+### save data no rewriting
 
 `simStorage.put(key, value)`
 or
@@ -32,27 +32,27 @@ or
 
 When LocalStorage already has a value with this key, new data will not write to LocalStorage.
 
-###save data rewriting
+### save data rewriting
 
 `simStorage.put(key, value, true)`
 
 When LocalStorage already has a value with this key, new data will replace the old value in LocalStorage.
 
-###get data with original type
+### get data with original type
 
 `simStorage.put(key, value, true)`
 
-###update data
+### update data
 
 `simStorage.update(key, value)`
 
 Make sure this key exists in LocalStorage, or SimStorage will give an error.
 
-###delete data
+### delete data
 
 `simStorage.delete(key)`
 
-###append an object to an existing object or array
+### append an object to an existing object or array
 
 don't convert existing object to array: 
 
@@ -64,9 +64,9 @@ convert existing object to array:
  
 `simStorage.append(key, value, true)`
 
-##API GUIDE
+## API GUIDE
 
-###put(key, value\[, rewrite])
+### put(key, value\[, rewrite])
 
 key \[string]: the key of the object to write to LocalStorage.
 
@@ -74,23 +74,23 @@ value \[object, array, number, string, boolean]: the value to write.
 
 rewrite \[optional, boolean]: default false, if exist this key, you can only write this value when rewrite === true.
 
-###get(key)
+### get(key)
 
 key \[string]: the key of the object to get in LocalStorage.
 
 return: will automatically convert to the original type when writing.
 
-###update(key, value)
+### update(key, value)
 
 key \[string]: the key of the object to update in LocalStorage.
 
 value \[object, array, number, string, boolean]: the value to update.
 
-###delete(key)
+### delete(key)
 
 key \[string]: the key of the object to delete in LocalStorage.
 
-###append(key, value\[, convert])
+### append(key, value\[, convert])
 
 key \[string]: the key of the object to append in LocalStorage.
 
