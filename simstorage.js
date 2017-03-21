@@ -27,21 +27,22 @@ var simStorage = (function () {
      * @param value [object, array]: the object/array to append.
      * @param convert [boolean, optional]: convert object to array when value with this key in LocalStorage is object.
      */
-    function append(key, value, convert) {
+    var append = function(key, value, convert) {
         convert = convert === undefined ? false : convert;
 
         var valueStr = getRawFromLocalStorage(key) + '';
         var valuePrefix = valueStr.substring(0, 1);
         var valueContent = valueStr.substring(2);
 
-        var array;
+        var array=[];
 
         if (valuePrefix === 'A') {
             array = JSON.parse(valueContent);
 
         } else if (valuePrefix === 'O') {
             if (convert === true) {
-                array = [].push(JSON.parse(valueContent));
+                var oldObj = JSON.parse(valueContent);
+                array.push(oldObj);
             } else {
                 console.error("SimStorage: cannot append to an object value, to convert object to array, set convert=true ↓");
                 console.error('key: ' + key + ' ↓');
@@ -61,7 +62,7 @@ var simStorage = (function () {
             array.push(value);
         }
         writeRawToLocalStorage(key, 'A:' + JSON.stringify(array));
-    }
+    };
 
     /**
      * delete data
