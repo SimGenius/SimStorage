@@ -1,5 +1,7 @@
 # SimStorage
 
+中文用户请查看[中文文档](https://github.com/SimGenius/SimStorage/blob/master/README-CN.MD)
+
  - Introduce
  - Features
  - Usage
